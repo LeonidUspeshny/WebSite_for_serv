@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./Image/foto.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    background: none;
+    padding: 40px 60px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-button {
+    padding: 16px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.warning {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #c62828;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: none;
+    /* Убирает любой фон (цвет, изображение) */
+}
