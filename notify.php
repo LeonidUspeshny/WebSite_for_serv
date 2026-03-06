@@ -1,7 +1,7 @@
 <?php
 function sendTelegramNotification($ip) {
-    $botToken = 'Ваш токен'; // замените на токен бота
-    $chatId = 'Id Chat';   // замените на ID чата
+    $botToken = 'REVOKED'; // замените на токен бота
+    $chatId = '1083318278';   // замените на ID чата
 
     $message = "🌐 Новый посетитель сайта!\n"
            . "IP-адрес: $ip\n"
