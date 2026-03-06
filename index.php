@@ -17,6 +17,15 @@ sendTelegramNotification($visitorIP);
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Прозрачное горизонтальное меню -->
+    <nav class="transparent-menu">
+        <ul class="menu-list">
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
         <button class="login-button" id="loginBtn">Войти</button>
         <div class="warning">Осторожно</div>

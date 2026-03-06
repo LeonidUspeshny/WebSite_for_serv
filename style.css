@@ -18,12 +18,73 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Стили для прозрачного горизонтального меню */
+.transparent-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* Поддержка Safari */
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+}
+
+.menu-list li {
+    margin: 0 25px;
+}
+
+.menu-list a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.menu-list a:hover {
+    color: #667eea;
+}
+
+.menu-list a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #667eea;
+    transition: width 0.3s ease;
+}
+
+.menu-list a:hover::after {
+    width: 100%;
+}
+
+/* Существующие стили с корректировкой отступов для учёта меню */
 .container {
     text-align: center;
     background: none;
     padding: 40px 60px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 100px;
+    /* Отступ от фиксированного меню */
+    max-width: 500px;
+    width: 90%;
 }
 
 .login-button {
@@ -53,5 +114,4 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     background: none;
-    /* Убирает любой фон (цвет, изображение) */
 }
