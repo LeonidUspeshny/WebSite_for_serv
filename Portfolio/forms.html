@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo.jpg" type="images/png">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Формы</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Поиск</h2>
+        <form action="" method="get">
+
+            <label for="search">Поиск</label>
+            <input type="search" name="search" required minlength="4" maxlength="20" placeholder="найдется все">
+            <button type="submit">Найти</button>
+        </form>
+        <h2>Заявка на участие</h2>
+        <form action="" method="get">
+
+            <label for="city">Ваш город</label>
+            <select name="city" id="city">
+                <option value="">--Выберите город--</option>
+                <option value="moscow">Москва</option>
+                <option value="sanktpeterburg">Санкт-Петербург</option>
+                <option value="kazan">Казань</option>
+                <option value="novgorod">Новгород</option>
+            </select>
+
+            <label for="name">Имя</label>
+            <input type="text" id="name" required>
+
+            <label for="surname">Фамилия</label>
+            <input type="text" id="surname" required>
+
+            <label for="mail">Email</label>
+            <input type="email" id="mail" required>
+
+            <label for="tel">Телефон</label>
+            <input type="tel" id="tel" required>
+
+            <label for="education">Уровень вашего образования</label>
+            <fieldset>
+                <label>
+                    <input type="checkbox" value="Среднее общее">
+                    Среднее общее
+                </label>
+                <label>
+                    <input type="checkbox" value="Среднее профессиональное">
+                    Среднее профессиональное
+                </label>
+                <label>
+                    <input type="checkbox" value="Высшее">
+                    Высшее
+                </label>
+            </fieldset>
+
+            <label for="answer">Тестовый вопрос. HTML - это ...</label>
+            <fieldset>
+                <label>
+                    <input type="radio" name="answer" value="answer1">
+                    Язык программирования
+                </label>
+                <label>
+                    <input type="radio" name="answer" value="answer2">
+                    Иностранный Язык
+                </label>
+                <label>
+                    <input type="radio" name="answer" value="answer3">
+                    Язык разметки
+                </label>
+            </fieldset>
+
+
+            <label for="social">Ссылка на соц сети</label>
+            <input type="url" id="social" required>
+
+            <label for="desc">Ваш опыт</label>
+            <textarea name="desc" autocomplete="off" id="desc" cols="30" rows="10"
+                placeholder="Расскажите о себе"></textarea>
+
+            <button type="reset">Сбросить</button>
+            <button type="submit">Отправить</button>
+
+        </form>
+
+        <h2>Авторизация</h2>
+        <form action="" method="get">
+
+            <label for="login">Email</label>
+            <input type="email" id="login" required placeholder="Введите логин">
+
+            <label for="pass">Пароль</label>
+            <input type="password" id="pass" required placeholder="Введите пароль">
+
+            <button type="submit">Войти</button>
+
+        </form>
+
+        <h2>Запись</h2>
+        <form action="" method="get">
+
+            <label for="name">Имя</label>
+            <input type="text" id="name_" required>
+
+            <label for="num">Количество персон</label>
+            <input type="number" id="num" min="2" max="8" required>
+
+            <label for="date">Дата</label>
+            <input type="date" id="date" required>
+
+            <label for="time"> Время</label>
+            <input type="time" id="time" required>
+
+            <button type="submit">OK</button>
+
+        </form>
+
+        <h2>Создать заметку</h2>
+        <form action="">
+            <textarea autocomplete="off" cols="30" rows="10" placeholder="Введите текст заметки"></textarea>
+            <label>
+                Выберите цвет стикера
+                <input type="color">
+            </label>
+            <label>
+                Прикрепите файлов
+                <input type="file" multiple enctype="multipart/form-data">
+            </label>
+        </form>
+
+        <form></form>
+    </div>
+    <!-- windows: ipconfig -->
+    <!-- mac/linux: ifconfig -->
+    <footer>
+        <div class="container">
+            <div class="logo">
+                <a href="/">На главную страницу</a>
+            </div>
+            <div>
+                <p>Здесь какой-нибудь текст</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

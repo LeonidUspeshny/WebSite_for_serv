@@ -24,12 +24,12 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
+    background: transparent;
+    backdrop-filter: transparent;
     -webkit-backdrop-filter: blur(12px);
     /* Поддержка Safari */
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
 }
 
 .menu-list {
@@ -48,7 +48,7 @@ body {
 
 .menu-list a {
     text-decoration: none;
-    color: #333;
+    color: white;
     font-size: 18px;
     font-weight: 500;
     transition: all 0.3s ease;

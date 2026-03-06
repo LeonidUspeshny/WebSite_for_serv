@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo.jpg" type="images/png">
+    <title>Журнал SOC аналитика</title>
+    <link rel="stylesheet" href="css/index.style.css">
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <script src="js/theme.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+
+
+
+</head>
+
+<body>
+    <header>
+        <div class="container row">
+            <img src="images/logo.jpg" height="50" width="50"> <span>Журнал SOC аналитика</span>
+            <button id="themeToggle">🌙</button>
+            <nav>
+                <ul class="nav">
+                    <li><a href="../index.php">Дом</a></li>
+                    <li><a href="rbac.html">RBAC</a></li>
+                    <li><a href="table.html">Таблицы</a></li>
+                    <li><a href="charts.html">Графики</a></li>
+                    <li><a href="reports.html">Отчёты PDF</a></li>
+                    <li><a href="#podcasts">Подкасты</a></li>
+                    <li><a href="sandbox.html">Sandbox</a></li>
+                    <li><a href="roadmap.html">SOC Roadmap</a></li>
+
+
+                </ul>
+            </nav>
+            <section>
+                <div class="video">
+                    <video controls width="200" height="150">
+                        <source src="video/С Новым Годом! .mp4" type="video/mp4">
+                    </video>
+                </div>
+            </section>
+        </div>
+    </header>
+    <div class="container">
+        <div class="wrapper">
+            <main>
+                <section class="dashboard">
+                    <div class="card critical">Critical<br><strong>3</strong></div>
+                    <div class="card high">High<br><strong>7</strong></div>
+                    <div class="card medium">Medium<br><strong>15</strong></div>
+                    <div class="card sla">SLA OK<br><strong>98%</strong></div>
+                </section>
+                <div class="mitre">
+                    <span class="badge">T1110 Brute Force</span>
+                    <span class="badge">T1059 Command Line</span>
+                    <span class="badge">T1046 Network Scan</span>
+                </div>
+
+
+                <div class="main-container">
+                    <article>
+                        <h1>Hello!</h1>
+                        <section>
+                            <h2>Кто такой SOC‑аналитик</h2>
+                            <p>
+                                SOC‑аналитик (Security Operations Center Analyst) — специалист по кибербезопасности,
+                                отвечающий за мониторинг, выявление
+                                и реагирование на инциденты в ИТ‑инфраструктуре организации.
+                            </p>
+                            <img src="images/foto4.jpg" height="200" alt="SOC аналитик">
+                            <p>
+                                SOC (Security Operations Center) — это центр мониторинга и реагирования на киберугрозы,
+                                работающий в режиме 24/7. Его
+                                главная цель — минимизация времени обнаружения (MTTD) и времени реагирования (MTTR) на
+                                атаки.
+                            </p>
+                            <img src="images/foto5.jpg" height="200" alt="SOC">
+                        </section>
+                        <section>
+                            <span>Разберем что такое SOC подробнее</span>
+                            <div class="sidebar">
+                                <h3>Оглавление</h3>
+                                <ul class="toc">
+                                    <li><a href="#1">Задачи SOC</a></li>
+                                    <li><a href="#2">Инструменты</a></li>
+                                    <li><a href="#3">SIEM правила</a></li>
+                                    <li><a href="#4">Корреляция</a></li>
+                                    <li><a href="#5">Навыки</a></li>
+                                    <li><a href="#6">Итоги</a></li>
+                                </ul>
+                            </div>
+
+                        </section>
+                        <section id="1">
+                            <span>Основные задачи SOC‑аналитика </span>
+                            <ol>
+                                <li><strong>Круглосуточный мониторинг</strong> событий безопасности из разных источников
+                                    (сети, серверов, рабочих станций, облачных сервисов)</li>
+                                <li><strong>Анализ инцидентов:</strong> отсеивание ложных срабатываний, классификация
+                                    угроз, определение
+                                    критичности.</li>
+                                <li><strong>Реагирование на инциденты:</strong> изоляция заражённых хостов, блокировка
+                                    вредоносных
+                                    IP/доменов, сбор доказательств.</li>
+                                <li><strong>Написание и настройка правил корреляции</strong> для SIEM‑систем.</li>
+                                <li><strong>Документирование</strong> инцидентов и подготовка отчётов для руководства
+                                </li>
+                                <li><strong>Взаимодействие</strong> с другими командами (IT, Legal, PR) при серьёзных
+                                    атаках.</li>
+                                <li><strong>Проактивный поиск угроз</strong> (threat hunting) в инфраструктуре.</li>
+                            </ol>
+                        </section>
+                        <section id="2">
+                            <span>Ключевые инструменты SOC‑аналитика</span>
+                            <ol>
+                                <li><strong>SIEM‑системы</strong> (Splunk, IBM QRadar, ArcSight, MaxPatrol SIEM) —
+                                    агрегация и анализ логов, корреляция событий.</li>
+                                <li><strong>SOAR‑платформы</strong> (Cortex XSOAR, IBM Resilient) — автоматизация
+                                    реагирования, плейбуки.</li>
+                                <li><strong>EDR/XDR</strong> (CrowdStrike, SentinelOne, Microsoft Defender for Endpoint)
+                                    — мониторинг конечных точек.</li>
+                                <li><strong>Сетевые анализаторы</strong> (Wireshark, Suricata, Zeek) — разбор трафика,
+                                    выявление аномалий.</li>
+                                <li><strong>Threat Intelligence</strong> (AlienVault OTX, MISP, VirusTotal) — базы
+                                    индикаторов компрометации (IOC).</li>
+                                <li><strong>Лог‑менеджеры</strong> (ELK Stack, Graylog) — сбор и визуализация логов.
+                                </li>
+                                <li><strong>Песочницы</strong> (Cuckoo, Fidelis Sandbox) — анализ вредоносного ПО.</li>
+                                <li><strong>Скриптинг</strong> (Python, PowerShell, Bash) — автоматизация рутинных
+                                    задач.
+                                </li>
+                            </ol>
+                        </section>
+                        <section id="3">
+                            <span>Примеры правил корреляции в SIEM</span>
+                            <p>Правила корреляции — это логические условия, которые SIEM использует для
+                                <strong>объединения разрозненных событий</strong> в
+                                потенциальный инцидент.
+                            </p>
+                            <h5>Пример 1. Подозрительный вход с необычного местоположения</h5>
+                            <h5>Условие:</h5>
+                            <ul>
+                                <li>Событие входа в систему (Event ID 4624 в Windows).</li>
+                                <li>IP‑адрес входа не входит в белый список корпоративных сетей.</li>
+                                <li>Время входа — вне рабочих часов (например, 02:00–05:00).</li>
+                            </ul>
+                            <h5>Правило (на псевдокоде):</h5>
+
+                            <pre><code class="language-bash">
+                            IF (EventID = 4624)
+                            AND (SourceIP NOT IN whitelist)
+                            THEN Alert
+                            </code>
+                            </pre>
+
+                            <h5>Действие:</h5>
+                            <ul>
+                                <li>Отправить уведомление в чат SOC.</li>
+                                <li>Заблокировать учётную запись на 15 минут.</li>
+                                <li>Запросить подтверждение у пользователя через SMS.</li>
+                            </ul>
+                            <h5>Пример 2. Попытка брутфорса RDP</h5>
+                            <h5>Условие:</h5>
+                            <ul>
+                                <li>Более 10 неудачных попыток входа (Event ID 4625) за 5 минут.</li>
+                                <li>Один и тот же источник IP.</li>
+                                <li>Цель — сервер с открытым портом 3389 (RDP).</li>
+                                <h5>Правило (на псевдокоде):</h5>
+                                <pre>
+                                    <code class="language-bash">
+                                        IF (COUNT(EventID = 4625) > 10)
+                                        WITHIN 5 MINUTES
+                                        GROUP BY SourceIP
+                                        HAVING (DestinationPort = 3389)
+                                        THEN Trigger Alert: "RDP Bruteforce Attempt"
+                                    </code>
+                                </pre>
+                            </ul>
+                            <h5>Действие:</h5>
+                            <ul>
+                                <li>Добавить IP в чёрный список на межсетевом экране.</li>
+                                <li>Отправить алерт дежурному аналитику.</li>
+                                <li>Проверить другие серверы на признаки сканирования.</li>
+                            </ul>
+                            <h5>Пример 3. Утечка данных через DNS</h5>
+                            <h5>Условие:</h5>
+                            <ul>
+                                <li>DNS‑запросы к неизвестным доменам с длинными поддоменами (признак DNS tunneling).
+                                </li>
+                                <li>Более 50 запросов за 1 минуту.</li>
+                                <li>Ответ сервера содержит Base64‑данные.</li>
+                            </ul>
+                            <h5>Правило (на псевдокоде):</h5>
+                            <pre>
+                                <code class="language-bash">
+                                    IF (DNS_Query_Length > 100)
+                                    AND (COUNT(DNS_Query) > 50) WITHIN 1 MINUTE
+                                    AND (Response_Contains_Base64 = TRUE)
+                                    THEN Trigger Alert: "Possible DNS Data Exfiltration"
+                                </code>
+                            </pre>
+                            <h5>Действие:</h5>
+                            <ul>
+                                <li>Изолировать хост от сети.</li>
+                                <li>Собрать дамп памяти и сетевые сессии.</li>
+                                <li>Проверить процесс, инициировавший запросы.</li>
+                            </ul>
+                        </section>
+                        <section id="4">
+                            <h5>Как создаются правила корреляции</h5>
+                            <ol>
+                                <li><strong>Определение сценария угрозы</strong> (например, фишинг, ransomware, lateral
+                                    movement).</li>
+                                <li><strong>Выявление индикаторов</strong> (логи, сетевой трафик, изменения файлов).
+                                </li>
+                                <li><strong>Формулировка условий</strong> в синтаксисе SIEM (Splunk SPL, QRadar AQL).
+                                </li>
+                                <li><strong>Тестирование</strong> на исторических данных.</li>
+                                <li><strong>Настройка исключений</strong> (whitelist, false positive suppression).</li>
+                                <li><strong>Внедрение</strong> и мониторинг эффективности.</li>
+                            </ol>
+                        </section>
+                        <section id="5">
+                            <h5>Важные навыки SOC‑аналитика</h5>
+                            <ul>
+                                <li><strong>Знание протоколов</strong> (TCP/IP, DNS, HTTP/HTTPS, SMB).</li>
+                                <li><strong>Умение читать логи</strong> Windows/Linux, сетевых устройств.</li>
+                                <li><strong>Понимание техник злоумышленников</strong> (MITRE ATT&CK).</li>
+                                <li><strong>Базовые навыки программирования</strong> для выявления скрытых угроз.</li>
+                                <li><strong>Аналитическое мышление</strong> для выявления скрытых угроз.</li>
+                                <li><strong>Стрессоустойчивость</strong> при работе с критическими инцидентами.</li>
+                            </ul>
+                        </section>
+                        <hr>
+                        <section id="6">
+                            <h5>Подведем итоги</h5>
+                            <p>SOC‑аналитик — это «страж» цифровой инфраструктуры, который сочетает <strong>технические
+                                    знания, аналитический склад ума и оперативность</strong> в принятии решений. Его
+                                работа позволяет организациям:</p>
+                            <ul>
+                                <li>сокращать время обнаружения угроз;</li>
+                                <li>минимизировать ущерб от атак;</li>
+                                <li>поддерживать непрерывность бизнес‑процессов.</li>
+                            </ul>
+                            <p>Эффективность SOC напрямую зависит от <strong> качества правил корреляции, скорости
+                                    реагирования и постоянного обучения</strong> команды новым тактикам злоумышленников.
+                            </p>
+                        </section>
+                        <hr>
+                    </article>
+                </div>
+            </main>
+            <aside>
+                <div class="sidebar">
+                    <div class="sidebar" id="podcasts">
+
+                        <h3>🎧 SOC Подкасты</h3>
+
+                        <div class="podcast">
+                            <p>Kubernetes_лучшие_практики От YAML до GitOps</p>
+                            <audio controls>
+                                <source src="audio/Kubernetes_лучшие_практики_От_YAML_до_GitOps.m4a" type="audio/mpeg">
+                            </audio>
+                        </div>
+
+                        <div class="podcast">
+                            <p>Архитектор_программных_сервисов</p>
+                            <audio controls>
+                                <source src="audio/Архитектор_программных_сервисов.m4a" type="audio/mpeg">
+                            </audio>
+                        </div>
+
+                        <div class="podcast">
+                            <p>Безопасность_DevOps_Предотвращать_или_реагировать</p>
+                            <audio controls>
+                                <source src="audio/Безопасность_DevOps_Предотвращать_или_реагировать.m4a"
+                                    type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <div class="podcast">
+                            <p>Как_хакеры_ломают_сайты</p>
+                            <audio controls>
+                                <source src="audio/Как_хакеры_ломают_сайты_Фленов_глазами_практиков.m4a"
+                                    type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <div class="podcast">
+                            <p>Кибербезопасность_Базовые_принципы_Революция_мышления</p>
+                            <audio controls>
+                                <source src="audio/Кибербезопасность_Базовые_принципы_Революция_мышления.m4a"
+                                    type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <div class="podcast">
+                            <p>Кибербезопасность_Революция_или_эшелонированная_защита</p>
+                            <audio controls>
+                                <source src="audio/Кибербезопасность_Революция_или_эшелонированная_защита.m4a"
+                                    type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <div class="podcast">
+                            <p>Реагирования_на_инциденти</p>
+                            <audio controls>
+                                <source src="audio/Реагирования_на_инцидент.m4a" type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <div class="podcast">
+                            <p>Секреты_аналитиков_безопасности</p>
+                            <audio controls>
+                                <source src="audio/Секреты_аналитиков_безопасности_Графы_и_аномалии_в_сети.m4a"
+                                    type="audio/mpeg">
+                            </audio>
+                        </div>
+
+                    </div>
+
+                </div>
+            </aside>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <nav>
+                <ul class="nav">
+                    <li><a href="/rbac.html">RBAC</a></li>
+                    <li><a href="/table.html">Таблицы</a></li>
+                    <li><a href="/charts.html">Графики</a></li>
+                    <li><a href="/reports.html">Отчёты PDF</a></li>
+                    <li><a href="#podcasts">Подкасты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+    <script>
+        const toggle = document.getElementById("themeToggle");
+        toggle.onclick = () => {
+            document.body.classList.toggle("light");
+            toggle.textContent =
+                document.body.classList.contains("light") ? "🌞" : "🌙";
+        };
+    </script>
+</body>
+
+</html>

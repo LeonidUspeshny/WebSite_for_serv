@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOC Career Roadmap</title>
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--bg-main, #fff);
+            color: var(--text-main, #222);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: var(--accent, #1976d2);
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        header .nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            padding: 0;
+            margin: 0;
+        }
+
+        header .nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .roadmap {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .level-card {
+            flex: 1 1 300px;
+            border: 1px solid var(--border, #ccc);
+            border-radius: 12px;
+            padding: 20px;
+            background: var(--bg-main, #fff);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .level-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .level-card h2 {
+            margin-top: 0;
+            color: var(--accent, #1976d2);
+        }
+
+        .level-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .level-card ul li::before {
+            content: "✔ ";
+            color: green;
+        }
+
+        .level-card .criteria {
+            margin-top: 10px;
+            font-size: 14px;
+            color: var(--text-muted, #888);
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            color: var(--text-muted, #888);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container row">
+            <span>SOC Career Roadmap</span>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="sandbox.html">Sandbox</a></li>
+                    <li><a href="charts.html">Charts</a></li>
+                    <li><a href="reports.html">PDF</a></li>
+                    <li><a href="roadmap.html">Roadmap</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>🔹 SOC Career Roadmap: L1 → L2 → L3</h1>
+
+        <div class="roadmap">
+            <!-- L1 -->
+            <div class="level-card">
+                <h2>L1 Analyst</h2>
+                <p>Основные обязанности: triage инцидентов, проверка false positive, эскалация.</p>
+                <ul>
+                    <li>Обработка алертов из SIEM</li>
+                    <li>Фильтрация ложных срабатываний</li>
+                    <li>Эскалация критических инцидентов</li>
+                    <li>Соблюдение SLA</li>
+                </ul>
+                <div class="criteria">
+                    Критерии перехода: ≥ 75% score, FP ≤ 15%, все критические инциденты обработаны
+                </div>
+            </div>
+
+            <!-- L2 -->
+            <div class="level-card">
+                <h2>L2 Incident Responder</h2>
+                <p>Основные обязанности: детальный анализ, MITRE mapping, RCA, containment.</p>
+                <ul>
+                    <li>Анализ логов EDR/SIEM</li>
+                    <li>Присвоение MITRE ATT&CK тегов</li>
+                    <li>Определение корня проблемы (RCA)</li>
+                    <li>Containment и частичная remediation</li>
+                </ul>
+                <div class="criteria">
+                    Критерии перехода: ≥ 80% accuracy по MITRE и RCA, верная эскалация L3
+                </div>
+            </div>
+
+            <!-- L3 -->
+            <div class="level-card">
+                <h2>L3 Threat Hunter / SOC Lead</h2>
+                <p>Основные обязанности: проактивный hunting, detection engineering, executive reporting.</p>
+                <ul>
+                    <li>Threat hunting & hypothesis building</li>
+                    <li>Kill chain mapping</li>
+                    <li>Разработка детекций и плейбуков</li>
+                    <li>Executive summary & KPI reporting</li>
+                </ul>
+                <div class="criteria">
+                    Критерии: высокое качество hunting, детекции, impact analysis, mentoring L1/L2
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        SOC Journal · Career Roadmap
+    </footer>
+</body>
+
+</html>

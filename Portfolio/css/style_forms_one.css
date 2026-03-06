@@ -1,0 +1,49 @@
+body {
+    background-color: rgb(234, 241, 238);
+}
+
+header {
+    background-color: rgb(234, 241, 238);
+}
+
+section {
+    background-color: rgb(234, 241, 238);
+}
+
+th {
+    background: rgba(12, 12, 190, 0.822);
+}
+
+td {
+    background: rgba(253, 8, 8, 0.422);
+}
+
+.logic-block {
+    background: rgba(rgba(221, 219, 208, 0.616), green, blue, alpha);
+}
+
+#usl {
+    border: 2px solid black;
+}
+
+nav a {
+    color: burlywood;
+}
+
+#usl,
+#zay {
+    background: rgb(171, 202, 143)
+}
+
+label,
+select,
+input,
+textarea {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.fieldset label,
+fieldset input {
+    display: inline-block;
+}

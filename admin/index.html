@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Доступ запрещён</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .warning {
+            color: #ff6b6b;
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        .ip-info {
+            background: #2d2d2d;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Что ты тут делаешь?</h1>
+    <div class="warning">⚠️ ВНИМАНИЕ: Доступ к этому ресурсу запрещён!</div>
+    <p>Ваше подключение зафиксировано и передаётся в службу безопасности.</p>
+    <div class="ip-info" id="ipInfo">
+        Загружается информация о вашем подключении...
+    </div>
+    <button onclick="goBack()">Вернуться на главную</button>
+
+    <script>
+        // Получаем IP и другую информацию о клиенте
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ipInfo').innerHTML = `
+                    <strong>Ваш IP:</strong> ${data.ip}<br>
+                    <strong>Время доступа:</strong> ${new Date().toLocaleString()}<br>
+                    <strong>Браузер:</strong> ${navigator.userAgent}
+                `;
+                // Отправляем данные на сервер для логирования
+                logAccess(data.ip);
+            });
+
+        function logAccess(ip) {
+            fetch('/log-access.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    ip: ip,
+                    timestamp: new Date().toISOString(),
+                    page: window.location.pathname
+                })
+            });
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+
+</html>

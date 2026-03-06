@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOC Reports | Генерация PDF</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--bg-main, #fff);
+            color: var(--text-main, #222);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: var(--accent, #1976d2);
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        header .nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            padding: 0;
+            margin: 0;
+        }
+
+        header .nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #reportContent {
+            border: 1px solid var(--border, #ccc);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: var(--bg-main, #fff);
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: var(--accent, #1976d2);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #115293;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container row">
+            <span>SOC Reports</span>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="sandbox.html">Sandbox</a></li>
+                    <li><a href="charts.html">Charts</a></li>
+                    <li><a href="roadmap.html">Roadmap</a></li>
+                    <li><a href="reports.html">Reports</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>📄 Генерация отчёта по кейсу</h1>
+
+        <div id="reportContent">
+            <h2>Инцидент: Suspicious PowerShell Execution</h2>
+            <p><strong>Дата:</strong> 28.01.2026</p>
+            <p><strong>Severity:</strong> High</p>
+            <p><strong>Источник:</strong> SIEM Splunk</p>
+            <p><strong>Описание:</strong> Обнаружена подозрительная команда PowerShell с encodedCommand, outbound
+                connection на неизвестный IP.</p>
+            <h3>Действия аналитика:</h3>
+            <ul>
+                <li>False Positive — нет</li>
+                <li>Эскалация — выполнена</li>
+                <li>Изоляция хоста — выполнена</li>
+                <li>Закрытие инцидента — выполнено</li>
+            </ul>
+            <h3>MITRE ATT&CK:</h3>
+            <p>Execution: T1059.001, Lateral Movement: T1075</p>
+            <h3>Итоговый Score:</h3>
+            <p>90/100 — SOC Lead readiness</p>
+        </div>
+
+        <button id="exportPdf">💾 Скачать PDF</button>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p style="text-align:center;color:var(--text-muted, #888)">
+                SOC Journal · Reports
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const { jsPDF } = window.jspdf;
+
+        document.getElementById('exportPdf').addEventListener('click', () => {
+            const doc = new jsPDF();
+
+            const report = document.getElementById('reportContent');
+
+            // Добавляем заголовок
+            doc.setFontSize(18);
+            doc.text("SOC Incident Report", 105, 15, { align: "center" });
+
+            // Добавляем текст из блока reportContent
+            doc.setFontSize(12);
+            let y = 25;
+            const lines = report.innerText.split('\n');
+            lines.forEach(line => {
+                if (y > 280) { // перенос на новую страницу
+                    doc.addPage();
+                    y = 20;
+                }
+                doc.text(line, 10, y);
+                y += 7;
+            });
+
+            doc.save("SOC_Report.pdf");
+        });
+    </script>
+</body>
+
+</html>

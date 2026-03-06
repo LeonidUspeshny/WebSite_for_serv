@@ -1,0 +1,263 @@
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leonid Chupakhin | SOC Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-gray-900 text-slate-200">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-950 sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto p-4 flex justify-between items-center">
+            <a href="./index.html" class="text-xl md:text-2xl font-bold text-teal-400">Leonid Chupakhin | SOC</a>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-slate-200 focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <ul id="menu" class="hidden md:flex space-x-6">
+                <li><a href="#about" class="nav-link font-medium transition-colors">About</a></li>
+                <li><a href="#skills" class="nav-link font-medium transition-colors">Skills</a></li>
+                <li><a href="#projects" class="nav-link font-medium transition-colors">Projects</a></li>
+                <li><a href="#contact" class="nav-link font-medium transition-colors">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-950 shadow-md">
+            <ul class="flex flex-col p-4 space-y-4 text-center">
+                <li><a href="#about" class="nav-link block p-2 rounded-lg hover:bg-gray-800 transition-colors">About</a>
+                </li>
+                <li><a href="#skills"
+                        class="nav-link block p-2 rounded-lg hover:bg-gray-800 transition-colors">Skills</a></li>
+                <li><a href="#projects"
+                        class="nav-link block p-2 rounded-lg hover:bg-gray-800 transition-colors">Projects</a></li>
+                <li><a href="#contact"
+                        class="nav-link block p-2 rounded-lg hover:bg-gray-800 transition-colors">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="py-20 md:py-32 text-center bg-gray-950">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-white mb-4 animate-fade-in-down">
+                    Hi, I'm <span class="text-teal-400">Leonid Chupakhin</span>
+                </h1>
+                <p class="text-lg md:text-2xl font-light text-slate-400 mb-8 animate-fade-in-up">
+                    I am a SOC analyst. I specialize in threat monitoring, incident investigation, and configuring
+                    detection systems (SIEM,
+                    IDS/IPS).
+                </p>
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+                    <a href="#projects"
+                        class="bg-teal-400 text-gray-900 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-teal-300 transform transition-transform hover:scale-105">
+                        View My Work
+                    </a>
+                    <a href="#contact"
+                        class="border border-teal-400 text-teal-400 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-teal-400 hover:text-gray-900 transform transition-transform hover:scale-105">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 md:py-24 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                    <div class="w-full md:w-1/2 mb-8 md:mb-0">
+                        <img src="Image/foto1.png" alt="Leonid Chupakhin Photo"
+                            class="w-full rounded-2xl shadow-xl transform transition-transform hover:scale-105">
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <h2 class="section-title">About Me</h2>
+                        <p class="text-lg text-slate-300 mb-4">
+                            Experienced SOC analyst with 3 years of experience in a corporate security monitoring
+                            center. I specialize in in-depth
+                            analysis of complex incidents, threat hunting, and developing correlation rules for Splunk.
+                            Key achievements:
+                            implemented 15+ custom detection rules for APT attacks, which increased threat detection by
+                            40%; led the investigation
+                            of a data breach within the company perimeter, locating the source in 4 hours. Proficient in
+                            Python for log analysis
+                            automation and familiar with cloud security (AWS, Azure). I aim to develop expertise in
+                            proactive threat detection and
+                            mentoring junior analysts.
+                        </p>
+                        <p class="text-lg text-slate-300">
+                            Purposeful, determined, athletic, and communicative. I never let the team down, polite,
+                            sociable, participate in
+                            corporate events. Ready to work for the benefit of the company and the team. I approach work
+                            responsibly, which affects
+                            the results.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 md:py-24 bg-gray-950">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-4xl md:text-6xl font-extrabold leading-tight text-white mb-4 animate-fade-in-down">
+                    <span class="text-teal-150">Skills</span>
+                </h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-12">
+                    <!-- AWS -->
+                    <div class="skill-item flex flex-col items-center p-4">
+                        <img src="./icons/Wazuh.jpeg" alt="Wazuh" class="w-16 h-16 mb-2 skill-icon">
+                        <span class="text-lg font-medium">Wazuh</span>
+                    </div>
+                    <!-- Kubernetes -->
+                    <div class="skill-item flex flex-col items-center p-4">
+                        <img src="./icons/splunk.jpeg" alt="Splunk" class="w-16 h-16 mb-2 skill-icon">
+                        <span class="text-lg font-medium">Splunk</span>
+                    </div>
+                    <!-- Docker -->
+                    <div class="skill-item flex flex-col items-center p-4">
+                        <img src="./icons/MaxPatrol_SIEM.jpg" alt="MaxPatrol SIEM" class="w-16 h-16 mb-2 skill-icon">
+                        <span class="text-lg font-medium">MaxPatrol SIEM</span>
+                    </div>
+                    <!-- Terraform -->
+                    <div class="skill-item flex flex-col items-center p-4">
+                        <img src="./icons/grafana.png" alt="Zabbix" class="w-16 h-16 mb-2 skill-icon">
+                        <span class="text-lg font-medium">Grafana</span>
+                    </div>
+                    <!-- Jenkins -->
+                    <div class="skill-item flex flex-col items-center p-4">
+                        <img src="./icons/prom.png" alt="Jenkins" class="w-16 h-16 mb-2 skill-icon">
+                        <span class="text-lg font-medium">Prometheus</span>
+                    </div>
+                    <!-- Python -->
+                    <div class="skill-item flex flex-col items-center p-4">
+                        <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="Python"
+                            class="w-16 h-16 mb-2 skill-icon">
+                        <span class="text-lg font-medium">Python</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 md:py-24 bg-gray-900">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-4xl md:text-6xl font-extrabold leading-tight text-white mb-4 animate-fade-in-down">
+                    <span class="text-teal-150">Projects</span>
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                    <!-- Project 1 -->
+                    <div class="project-card card p-6 transition-colors duration-300">
+                        <h3 class="text-2xl font-semibold text-teal-400 mb-2">Automated CI/CD Pipeline</h3>
+                        <p class="text-slate-400 mb-4">
+                            Implemented a secure CI/CD pipeline for a microservices application in a cloud environment
+                            (Kubernetes, EKS). Key
+                            security measures:
+
+                            - Isolation of GitLab runners in separate namespaces;
+                            - Secrets management through HashiCorp Vault;
+                            - Container image vulnerability scanning (Trivy) and policy compliance checks (OPA);
+                            - Collection and sending of pipeline logs to a SIEM system for correlation with network and
+                            host events.
+
+                            Result: ensured the pipeline's compliance with CIS Kubernetes Benchmark and PCI DSS
+                            requirements, reducing
+                            infrastructure compromise risks.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-teal-600 text-teal-100 text-xs px-3 py-1 rounded-full">Kubernetes</span>
+                            <span class="bg-teal-600 text-teal-100 text-xs px-3 py-1 rounded-full">GitLab CI/CD</span>
+                            <span class="bg-teal-600 text-teal-100 text-xs px-3 py-1 rounded-full">Docker</span>
+                            <span class="bg-teal-600 text-teal-100 text-xs px-3 py-1 rounded-full">EKS</span>
+                        </div>
+
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card card p-6 transition-colors duration-300">
+                        <h3 class="text-2xl font-semibold text-teal-400 mb-2">Blue Team Lab (Security Lab)
+                        </h3>
+                        <p class="text-slate-400 mb-4">
+                            Tested detection rules in the threat-detection-lab environment: developed Sigma rules for
+                            detecting lateral movement
+                            (PsExec, WMI), achieved 92% accuracy on test data.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-teal-600 text-teal-100 text-xs px-3 py-1 rounded-full">MITRE ATT&CK</span>
+                            <span class="bg-teal-600 text-teal-100 text-xs px-3 py-1 rounded-full">YARA</span>
+                            <span class="bg-teal-600 text-teal-100 text-xs px-3 py-1 rounded-full">Sysmon</span>
+                        </div>
+
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card card p-6 transition-colors duration-300">
+                        <h3 class="text-2xl font-semibold text-teal-400 mb-2">Traffic analysis</h3>
+                        <p class="text-slate-400 mb-4">
+                            Collected and analyzed network traffic to identify suspicious activity and cyber threats;
+                            filtered and decoded packets by IP addresses, ports, and protocols (DNS, HTTP, SMB, RDP,
+                            etc.);
+                            identified anomalies: unusual data volumes, suspicious ports/protocols, beaconing (C2 server
+                            signals);
+                            investigated incidents — built attack chains from initial access to data exfiltration;
+                            correlated network events with endpoint logs (Windows Event Log, Sysmon) and EDR alerts;
+                            determined indicators of compromise (IoC): malicious IPs, domains, URLs, file hashes;
+                            classified attacks according to the MITRE ATT&CK matrix (e.g., lateral movement, C2
+                            communication);
+                            prepared reports with event chronology, involved nodes, and response recommendations;
+                            configured detection and alerting rules to prevent recurrent attacks;
+                            blocked malicious connections on the firewall and isolated infected nodes.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-teal-600 text-teal-100 text-xs px-3 py-1 rounded-full">Threat hunting</span>
+                            <span class="bg-teal-600 text-teal-100 text-xs px-3 py-1 rounded-full">Wireshark</span>
+                            <span class="bg-teal-600 text-teal-100 text-xs px-3 py-1 rounded-full">IoC</span>
+                            <span class="bg-teal-600 text-teal-100 text-xs px-3 py-1 rounded-full">Python / Bash</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 bg-gray-950">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="section-title text-center mx-auto w-fit">Contact</h2>
+                <p class="text-lg text-slate-300 mb-8">
+                    I'm currently seeking new opportunities. Feel free to reach out and connect!
+                </p>
+                <div class="max-w-xl mx-auto space-y-4 text-left card">
+                    <p class="flex items-center space-x-2">
+                        <svg class="w-6 h-6 text-teal-400" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                        </svg>
+                        <a href="mailto:graal@inbox.ru" class="text-slate-300 hover:text-teal-400">graal@inbox.ru</a>
+                    </p>
+
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-center py-6 text-slate-400">
+        <p>&copy; 2026 Leonid Chupakhin. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

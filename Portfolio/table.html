@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo.jpg" type="images/png">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="index.js"></script>
+    <title>Отчеты SOC аналитика</title>
+    <style>
+        th {
+            background: green;
+        }
+
+        td {
+            background: rgba(255, 0, 0, 0.354);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <section>
+            <h4>Пример отчёта SOC‑аналитика в виде таблицы</h4>
+            <p>Ниже — шаблон структурированного отчёта о выявленных инцидентах и проведённых мероприятиях за отчётный
+                период (например,
+                за неделю или месяц). Таблица позволяет наглядно представить ключевые данные и динамику угроз.</p>
+            <h5>Общая информация</h5>
+            <p><strong>Период отчёта</strong> 13–19 января 2026 г.</p>
+            <p><strong>Ответственный аналитик:</strong> Чупахин Л.И.</p>
+            <p><strong>Подразделение:</strong> SOC Level 2.</p>
+            <h5>Таблица: сводка по инцидентам и действиям</h5>
+        </section>
+        <div class="container-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Дата и время</th>
+                        <th>Тип инцидента</th>
+                        <th>Источник угрозы</th>
+                        <th>Критичность</th>
+                        <th>Описание</th>
+                        <th>Предпринятые действия</th>
+                        <th>Статус</th>
+                        <th>Время реагирования (мин)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>13.01.2026 10:15</td>
+                        <td>Неудачные попытки входа (bruteforce)</td>
+                        <td>IP 198.51.100.45</td>
+                        <td>High</td>
+                        <td>25 неудачных попыток входа по RDP за 3 мин</td>
+                        <td>Блокировка IP на FW; уведомление пользователя</td>
+                        <td>Закрыт</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>13.01.2026 10:51</td>
+                        <td>Подозрительный DNS‑запрос</td>
+                        <td>Хост WIN-PC-01</td>
+                        <td>Medium</td>
+                        <td>Длинный поддомен в DNS‑запросе (признак tunneling)</td>
+                        <td>Изоляция хоста; сбор дампа памяти</td>
+                        <td>В работе</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>13.01.2026 11:30</td>
+                        <td>Фишинговое письмо</td>
+                        <td>Почта oleg_kishinsky@ittechnology.com</td>
+                        <td>Low</td>
+                        <td>Письмо с вредоносным вложением .js</td>
+                        <td>Удаление письма; обновление спам‑фильтров</td>
+                        <td>Закрыт</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>13.01.2026 12:20</td>
+                        <td>Аномалия сетевого трафика</td>
+                        <td>Сервер DB‑01</td>
+                        <td>Critical</td>
+                        <td>Исходящий трафик на неизвестный IP (порт 443)</td>
+                        <td>Остановка сервиса; анализ логов</td>
+                        <td>В работе</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>13.01.2026 13:01</td>
+                        <td>Попытка повышения привилегий</td>
+                        <td>Хост ADMIN‑WS</td>
+                        <td>High</td>
+                        <td>Запуск PowerShell‑скрипта с подозрительными флагами</td>
+                        <td>Откат изменений; сброс пароля учётной записи</td>
+                        <td>Закрыт</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>13.01.2026 13:10</td>
+                        <td>Обнаружение ВПО (malware)</td>
+                        <td>Хост SALES‑03</td>
+                        <td>Critical</td>
+                        <td>Срабатывание EDR на процесс svchost.exe</td>
+                        <td>Карантин хоста; анализ образца в песочнице</td>
+                        <td>В работе</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>13.01.2026 13:22</td>
+                        <td>Нарушение политики доступа</td>
+                        <td>Приложение CRM</td>
+                        <td>Low</td>
+                        <td>Попытка доступа к конфиденциальным данным без прав</td>
+                        <td>Блокировка сессии; уведомление администратора CRM</td>
+                        <td>Закрыт</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="logo">
+                <a href="/">На главную страницу</a>
+            </div>
+            <div>
+                <p>Здесь какой-нибудь текст</p>
+            </div>
+        </div>
+    </footer>
+</body>

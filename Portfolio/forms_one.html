@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма Стажировки</title>
+    <link rel="stylesheet" href="css/style_forms_one.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/">Стажировка в <strong>IT</strong></a>
+            </div>
+            <div>
+                <nav>
+                    <ul>
+                        <li><a href="#vac">Вакансии</a></li>
+                        <li><a href="#usl">Условия</a></li>
+                        <li><a href="#trb">Требования</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <a href="#zay">Подать заявку</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h1>Стажировка в одной из лучших IT-компаний России</h1>
+        </section>
+        <section class="logic-block" id="vac">
+            <h2>Вакансии</h2>
+            <ul>
+                <li>Frontend</li>
+                <li>Backend</li>
+                <li>Мобильная разработка</li>
+                <li>DevOps</li>
+                <li>Анализ данных</li>
+                <li>Машинное обучение</li>
+            </ul>
+        </section>
+        <section class="logic-block" id="usl">
+            <h2>Условия</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Стажировка в течении года</th>
+                        <th>Стажировка летняя</th>
+                        <th>Погружение интенсивная стажировка</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Формат работы</th>
+                        <td colspan="2">Очно или Дистанционно</td>
+                        <td>Очно</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Оплата</th>
+                        <td colspan="2">до 50 000 р</td>
+                        <td>до 100 000 р</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+        <section class="logic-block" id="trb">
+            <h2>Требования</h2>
+            <p>Здесь должны быть требования</p>
+        </section>
+        <section class="logic-block zayavka" id="zay">
+            <h2>Подать заявку</h2>
+            <form action="" method="get">
+                <div>
+                    <label for="city">Ваш город</label>
+                    <select name="city" id="city">
+                        <option value="">--Выберите город--</option>
+                        <option value="moscow">Москва</option>
+                        <option value="sanktpeterburg">Санкт-Петербург</option>
+                        <option value="kazan">Казань</option>
+                        <option value="novgorod">Новгород</option>
+                    </select>
+                </div>
+
+                <label for="city">Направление</label>
+                <select name="naps" id="naps">
+                    <option value="">--Выберите направление--</option>
+                    <option value="Frontend">Frontend</option>
+                    <option value="Backend">Backend</option>
+                    <option value="DevOps">DevOps</option>
+                </select>
+
+                <label for="name">Имя</label>
+                <input type="text" id="name" required>
+
+                <label for="surname">Фамилия</label>
+                <input type="text" id="surname" required>
+
+                <label for="mail">Email</label>
+                <input type="email" id="mail" required>
+
+                <label for="tel">Телефон</label>
+                <input type="tel" id="tel" required>
+
+                <label for="education">Уровень вашего образования</label>
+                <fieldset>
+                    <label>
+                        <input type="checkbox" value="Среднее общее">
+                        Среднее общее
+                    </label>
+                    <label>
+                        <input type="checkbox" value="Среднее профессиональное">
+                        Среднее профессиональное
+                    </label>
+                    <label>
+                        <input type="checkbox" value="Высшее">
+                        Высшее
+                    </label>
+                </fieldset>
+
+
+                </fieldset>
+
+
+                <label for="social">Ссылка на соц сети</label>
+                <input type="url" id="social" required>
+
+                <label for="desc">Ваш опыт</label>
+                <textarea name="desc" autocomplete="off" id="desc" cols="30" rows="10"
+                    placeholder="Расскажите о себе"></textarea>
+
+                <button type="reset">Сбросить</button>
+                <button type="submit">Отправить</button>
+
+            </form>
+        </section>
+        <section>
+            <div class="map">
+                <iframe
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A0529878ba879e1998b6ba86c0f7fdd1804f5e0a3c0bd1944cff04e0c3499658e&amp;source=constructor"
+                    width="100%" height="352" frameborder="0"></iframe>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="logo">
+                <a href="/">На главную страницу</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -20,9 +20,10 @@ sendTelegramNotification($visitorIP);
     <!-- Прозрачное горизонтальное меню -->
     <nav class="transparent-menu">
         <ul class="menu-list">
-            <li><a href="#home">Главная</a></li>
-            <li><a href="#about">О нас</a></li>
-            <li><a href="#contact">Контакты</a></li>
+            <li><a href="./Portfolio/index.html">SOC</a></li>
+            <li><a href="./admin/index.html">You Here</a></li>
+            <li><a href="https://kishinskiy.ru/">DevOps</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 

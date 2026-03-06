@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOC Dashboard | Графики</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--bg-main, #fff);
+            color: var(--text-main, #222);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: var(--accent, #1976d2);
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        header .nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            padding: 0;
+            margin: 0;
+        }
+
+        header .nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .chart-container {
+            margin-bottom: 50px;
+        }
+
+        canvas {
+            background: var(--bg-main, #fff);
+            border: 1px solid var(--border, #ccc);
+            border-radius: 12px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container row">
+            <span>SOC Dashboard</span>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="sandbox.html">Sandbox</a></li>
+                    <li><a href="reports.html">PDF</a></li>
+                    <li><a href="roadmap.html">Roadmap</a></li>
+                    <li><a href="charts.html">Charts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>📊 SOC Dashboard</h1>
+
+        <!-- Alerts by Severity -->
+        <div class="chart-container">
+            <h2>Алерты по severity</h2>
+            <canvas id="severityChart" width="600" height="400"></canvas>
+        </div>
+
+        <!-- Alerts by Status -->
+        <div class="chart-container">
+            <h2>Статус инцидентов</h2>
+            <canvas id="statusChart" width="600" height="400"></canvas>
+        </div>
+
+        <!-- SLA Performance -->
+        <div class="chart-container">
+            <h2>Выполнение SLA</h2>
+            <canvas id="slaChart" width="600" height="400"></canvas>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p style="text-align:center;color:var(--text-muted, #888)">
+                SOC Journal · Dashboard
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== Alerts by Severity =====
+        const severityCtx = document.getElementById('severityChart').getContext('2d');
+        const severityChart = new Chart(severityCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Critical', 'High', 'Medium', 'Low'],
+                datasets: [{
+                    label: 'Алерты',
+                    data: [12, 19, 7, 3],
+                    backgroundColor: ['#d32f2f', '#f57c00', '#fbc02d', '#388e3c']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    title: {
+                        display: true,
+                        text: 'Алерты по severity'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Количество алертов' }
+                    },
+                    x: {
+                        title: { display: true, text: 'Severity' }
+                    }
+                }
+            }
+        });
+
+        // ===== Alerts by Status =====
+        const statusCtx = document.getElementById('statusChart').getContext('2d');
+        const statusChart = new Chart(statusCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Open', 'In Progress', 'Closed', 'Escalated'],
+                datasets: [{
+                    data: [8, 5, 15, 2],
+                    backgroundColor: ['#1976d2', '#fbc02d', '#388e3c', '#d32f2f']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    title: {
+                        display: true,
+                        text: 'Статус инцидентов'
+                    }
+                }
+            }
+        });
+
+        // ===== SLA Performance =====
+        const slaCtx = document.getElementById('slaChart').getContext('2d');
+        const slaChart = new Chart(slaCtx, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                datasets: [{
+                    label: 'SLA % выполнения',
+                    data: [95, 88, 92, 97],
+                    fill: false,
+                    borderColor: '#1976d2',
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: true, position: 'top' },
+                    title: {
+                        display: true,
+                        text: 'Выполнение SLA по неделям'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: { display: true, text: 'SLA (%)' }
+                    },
+                    x: {
+                        title: { display: true, text: 'Неделя' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

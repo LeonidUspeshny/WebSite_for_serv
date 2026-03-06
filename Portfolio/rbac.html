@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RBAC | Журнал SOC аналитика</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container row">
+            <span>RBAC — Role Based Access Control</span>
+            <nav>
+                <ul class="nav">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="rbac.html">RBAC</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+
+            <!-- ===== ROLE SWITCH (DEMO) ===== -->
+            <section class="dashboard">
+                <div class="card">
+                    <span>Текущая роль</span>
+                    <strong id="roleName">Analyst</strong>
+                    <br><br>
+                    <button onclick="setRole('analyst')">Analyst</button>
+                    <button onclick="setRole('lead')">Lead</button>
+                    <button onclick="setRole('manager')">Manager</button>
+                </div>
+            </section>
+
+            <!-- ===== ANALYST ===== -->
+            <section class="card rbac analyst">
+                <h2>🟢 SOC Analyst (L1 / L2)</h2>
+                <ul>
+                    <li>Просмотр алертов SIEM</li>
+                    <li>Анализ логов Windows / Linux</li>
+                    <li>Классификация инцидентов</li>
+                    <li>MITRE ATT&CK теги</li>
+                    <li>Первичное реагирование</li>
+                </ul>
+            </section>
+
+            <!-- ===== LEAD ===== -->
+            <section class="card rbac lead">
+                <h2>🟡 SOC Lead (L3)</h2>
+                <ul>
+                    <li>Редактирование правил корреляции</li>
+                    <li>Закрытие Critical-инцидентов</li>
+                    <li>Threat Hunting</li>
+                    <li>Контроль SLA / MTTR</li>
+                    <li>Эскалация в IR</li>
+                </ul>
+            </section>
+
+            <!-- ===== MANAGER ===== -->
+            <section class="card rbac manager">
+                <h2>🔵 SOC Manager</h2>
+                <ul>
+                    <li>Дашборды и KPI</li>
+                    <li>Отчёты для руководства</li>
+                    <li>Управление ролями</li>
+                    <li>Политики ИБ</li>
+                    <li>Аудит и комплаенс</li>
+                </ul>
+            </section>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p style="text-align:center;color:var(--text-muted)">
+                SOC Journal · RBAC Demo
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        let currentRole = "analyst";
+
+        function setRole(role) {
+            currentRole = role;
+            document.getElementById("roleName").textContent =
+                role.charAt(0).toUpperCase() + role.slice(1);
+
+            document.querySelectorAll(".rbac").forEach(el => {
+                el.style.display = "none";
+            });
+
+            document.querySelectorAll("." + role).forEach(el => {
+                el.style.display = "block";
+            });
+        }
+
+        // default
+        setRole("analyst");
+    </script>
+
+</body>
+
+</html>

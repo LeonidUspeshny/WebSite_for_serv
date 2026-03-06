@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOC Sandbox | Кейсы</title>
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--bg-main, #fff);
+            color: var(--text-main, #222);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: var(--accent, #1976d2);
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        header .nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            padding: 0;
+            margin: 0;
+        }
+
+        header .nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .case-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .case-card {
+            border: 1px solid var(--border, #ccc);
+            border-radius: 12px;
+            padding: 15px;
+            background: var(--bg-main, #fff);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .case-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .case-card h2 {
+            margin-top: 0;
+            color: var(--accent, #1976d2);
+        }
+
+        .case-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .case-card ul li::before {
+            content: "➤ ";
+            color: var(--accent, #1976d2);
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: var(--accent, #1976d2);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #115293;
+        }
+
+        .mitre-badge {
+            display: inline-block;
+            background-color: #fbc02d;
+            color: #000;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            margin-right: 5px;
+        }
+
+        .score {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            color: var(--text-muted, #888);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container row">
+            <span>SOC Sandbox</span>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="charts.html">Charts</a></li>
+                    <li><a href="reports.html">PDF</a></li>
+                    <li><a href="roadmap.html">Roadmap</a></li>
+                    <li><a href="sandbox.html">Sandbox</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>🛠 SOC Sandbox: кейсы L1 → L3</h1>
+
+        <div class="case-list" id="caseList">
+            <!-- Кейсы будут загружаться через JS -->
+        </div>
+    </div>
+
+    <footer>
+        SOC Journal · Sandbox
+    </footer>
+
+    <script>
+        const cases = [
+            {
+                id: 1,
+                level: 'L1',
+                title: 'Подозрительный PowerShell',
+                description: 'Обнаружена команда PowerShell с encodedCommand, outbound connection на неизвестный IP.',
+                mitre: ['T1059.001'],
+                actions: ['Проверить FP', 'Эскалация в L2', 'Изоляция хоста'],
+                score: 0
+            },
+            {
+                id: 2,
+                level: 'L2',
+                title: 'Необычный RDP доступ',
+                description: 'Более 10 неудачных попыток входа на RDP за 5 минут с одного IP.',
+                mitre: ['T1075'],
+                actions: ['Анализ логов', 'Блокировка IP', 'Проверка других серверов'],
+                score: 0
+            },
+            {
+                id: 3,
+                level: 'L3',
+                title: 'DNS Data Exfiltration',
+                description: 'Обнаружен DNS tunneling с Base64 payload, более 50 запросов в минуту.',
+                mitre: ['T1041'],
+                actions: ['Изоляция хоста', 'Сбор дампа памяти', 'Полный RCA'],
+                score: 0
+            }
+        ];
+
+        const caseList = document.getElementById('caseList');
+
+        function renderCases() {
+            caseList.innerHTML = '';
+            cases.forEach(c => {
+                const card = document.createElement('div');
+                card.className = 'case-card';
+
+                card.innerHTML = `
+                    <h2>${c.title} (${c.level})</h2>
+                    <p>${c.description}</p>
+                    <p>MITRE: ${c.mitre.map(t => `<span class="mitre-badge">${t}</span>`).join('')}</p>
+                    <ul>
+                        ${c.actions.map(a => `<li>${a}</li>`).join('')}
+                    </ul>
+                    <button onclick="completeCase(${c.id})">Завершить кейс</button>
+                    <p class="score" id="score-${c.id}">Score: ${c.score}</p>
+                `;
+
+                caseList.appendChild(card);
+            });
+        }
+
+        function completeCase(id) {
+            const c = cases.find(c => c.id === id);
+            if (!c) return;
+            c.score = 100; // Для демонстрации — полный score
+            document.getElementById(`score-${id}`).innerText = `Score: ${c.score}`;
+            alert(`Кейс "${c.title}" завершён!`);
+        }
+
+        // Инициализация
+        renderCases();
+    </script>
+</body>
+
+</html>
