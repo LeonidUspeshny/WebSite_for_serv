@@ -6,10 +6,30 @@
     <title>Leonid Chupakhin | SOC Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .home-btn {
+            position: fixed;
+            top: 80px;
+            left: 16px;
+            z-index: 1000;
+            padding: 10px 18px;
+            background: green;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .home-btn:hover {
+            background: darkgreen;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-900 text-slate-200">
+
+    <a href="index.html" class="home-btn">На главную страницу</a>
 
     <!-- Header & Navigation -->
     <header class="bg-gray-950 sticky top-0 z-50 shadow-lg">
@@ -75,13 +95,13 @@
             <div class="container mx-auto px-4">
                 <div class="flex flex-col md:flex-row items-center md:space-x-12">
                     <div class="w-full md:w-1/2 mb-8 md:mb-0">
-                        <img src="Image/foto1.png" alt="Leonid Chupakhin Photo"
+                        <img src="image/foto1.webp" alt="Leonid Chupakhin Photo"
                             class="w-full rounded-2xl shadow-xl transform transition-transform hover:scale-105">
                     </div>
                     <div class="w-full md:w-1/2">
                         <h2 class="section-title">About Me</h2>
                         <p class="text-lg text-slate-300 mb-4">
-                            Experienced SOC analyst with 3 years of experience in a corporate security monitoring
+                            Experienced SOC analyst with 5 years of experience in a corporate security monitoring
                             center. I specialize in in-depth
                             analysis of complex incidents, threat hunting, and developing correlation rules for Splunk.
                             Key achievements:
@@ -257,7 +277,7 @@
         <p>&copy; 2026 Leonid Chupakhin. All rights reserved.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    
 </body>
 
 </html>

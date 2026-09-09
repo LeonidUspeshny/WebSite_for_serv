@@ -1,13 +1,3 @@
-<?php
-// Подключаем скрипт уведомлений
-require_once '/var/www/private/notify.php';
-
-// Получаем IP посетителя
-$visitorIP = getClientIP();
-
-// Отправляем уведомление в Telegram
-sendTelegramNotification($visitorIP);
-?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -22,15 +12,36 @@ sendTelegramNotification($visitorIP);
         <ul class="menu-list">
             <li><a href="./Portfolio/index.html">SOC</a></li>
             <li><a href="./admin/index.html">You Here</a></li>
-            <li><a href="https://kishinskiy.ru/">DevOps</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <div class="container">
         <button class="login-button" id="loginBtn">Войти</button>
-        <div class="warning">Осторожно</div>
+        <button class="login-button" id="ClickBtn" onclick="showCustomAlert()">Жми</button>
+        <div class="warning"></div>
     </div>
+
+    <!-- Скрытое модальное окно -->
+    <div id="myModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Привет! Твой компьютер под угрозой.</p>
+        </div>
+    </div>
+
+     <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            const clickButton = document.getElementById('ClickBtn');
+            if (clickButton) {
+                clickButton.addEventListener('click', function () {
+                    alert('Вы в опасности. Скорее закройте это окно');
+                });
+            } else {
+                console.error('Кнопка с ID "ClickBtn" не найдена!');
+            }
+        });
+    </script>
 
     <!-- Подключение внешнего JavaScript-файла -->
     <script src="script.js"></script>
