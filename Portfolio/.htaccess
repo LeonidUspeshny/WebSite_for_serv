@@ -1,0 +1,10 @@
+# MIME types for media files
+AddType audio/mpeg .mp3
+AddType audio/mp4 .m4a .aac
+AddType video/mp4 .mp4
+AddType image/webp .webp
+
+# Enable HTTP Range requests for streaming (audio/video)
+<IfModule mod_headers.c>
+    Header set Accept-Ranges bytes
+</IfModule>
